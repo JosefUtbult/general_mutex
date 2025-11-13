@@ -1,0 +1,20 @@
+[package]
+name = "general_mutex"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+default = []
+std = []
+
+critical-section = ["dep-critical-section"]
+critical-section-std = ["std", "dep-critical-section/std"]
+spin = ["dep-spin"]
+std-mutex = ["std"]
+
+all = ["critical-section", "spin"]
+all-std = ["critical-section-std", "spin", "std-mutex"]
+
+[dependencies]
+dep-critical-section = { package = "critical-section", version = "1.2", default-features = false, optional = true }
+dep-spin = { package = "spin", version = "0.9.8", optional = true}

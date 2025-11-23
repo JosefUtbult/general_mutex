@@ -11,9 +11,10 @@ critical-section = ["dep-critical-section"]
 critical-section-std = ["std", "dep-critical-section/std"]
 spin = ["dep-spin"]
 std-mutex = ["std"]
+context-mutex = []
 
-all = ["critical-section", "spin"]
-all-std = ["critical-section-std", "spin", "std-mutex"]
+all = ["critical-section", "spin", "context-mutex"]
+all-std = ["critical-section-std", "spin", "std-mutex", "context-mutex"]
 
 [dependencies]
 dep-critical-section = { package = "critical-section", version = "1.2", default-features = false, optional = true }

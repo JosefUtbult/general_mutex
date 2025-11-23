@@ -20,7 +20,13 @@ macro_rules! setup_tests {
         fn lock_mut() {
             $crate::tests::test_lock_mut::<$mutex_type>();
         }
+    };
+}
 
+/// Generates recursive failure tests for a mutex type
+#[macro_export]
+macro_rules! setup_reqursive_tests {
+    ($mutex_type:ty) => {
         #[test]
         #[should_panic]
         fn recursive_lock() {

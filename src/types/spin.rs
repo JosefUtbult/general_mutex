@@ -1,4 +1,4 @@
-use crate::{Mutex as MutexTrait, setup_tests};
+use crate::{Mutex as MutexTrait, setup_reqursive_tests, setup_tests};
 use core::cell::RefCell;
 use dep_spin::Mutex as SpinMutex;
 
@@ -31,3 +31,4 @@ impl<Data> MutexTrait for Mutex<Data> {
 }
 
 setup_tests!(Mutex<_>);
+setup_reqursive_tests!(Mutex<_>);

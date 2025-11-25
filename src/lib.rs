@@ -1,8 +1,8 @@
 #![cfg_attr(not(feature = "std"), no_std)]
 
-mod mutex;
-mod tests;
-mod types;
+pub mod mutex;
+pub mod tests;
+pub mod types;
 
 pub use mutex::*;
 pub use tests::*;

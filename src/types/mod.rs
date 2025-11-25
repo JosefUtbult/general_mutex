@@ -6,6 +6,3 @@ pub mod spin;
 
 #[cfg(feature = "std-mutex")]
 pub mod std_mutex;
-
-#[cfg(feature = "context-mutex")]
-pub mod context_mutex;
